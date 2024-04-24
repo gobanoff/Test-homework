@@ -45,6 +45,14 @@
         height: 50px;
       }
 
+      .email1 {
+        font-weight: 800;
+        padding-left: 200px;
+        padding-top: 50px;
+        font-size: 25px;
+        color: rgb(12, 11, 11);
+      }
+
       .d {
         width: 1000px;
 
@@ -53,7 +61,7 @@
         margin-left: 200px;
       }
     </style>
-
+    <div class="email1"><span class="email1"></span></div>
     <div class="d">
       <table class="tb">
         <thead>
@@ -318,6 +326,58 @@
         return a + b + c;
       };
       console.log(a(3, 4, 4));
+    </script>
+    <script>
+      function generateEmail(
+        length,
+        includeLowercase,
+        includeUppercase,
+        includeNumbers
+      ) {
+        if (
+          length < 1 ||
+          (!includeLowercase && !includeUppercase && !includeNumbers)
+        ) {
+          return console.log(
+            "Negaliu sugeneruoti e-mailo. Keliaukit namo(arba čiuožkit)."
+          );
+        }
+
+        let char = "";
+        if (includeLowercase) char += "abcdefghijklmnopqrstuvwxyz";
+        if (includeUppercase) char += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        if (includeNumbers) char += "0123456789";
+
+        let email = "";
+        for (let i = 0; i < length; i++) {
+          email += char.charAt(Math.floor(Math.random() * char.length));
+        }
+        return email;
+      }
+
+      // Options
+      const emailNameLength = 10;
+      const includeLowercase = true;
+      const includeUppercase = true;
+      const includeNumbers = true;
+      const email1 = document.querySelector(".email1");
+      //const emailNameLength = 0;
+      //const includeLowercase = false;
+      //const includeUppercase = false;
+      //const includeNumbers = false;
+
+      const email = generateEmail(
+        emailNameLength,
+        includeLowercase,
+        includeUppercase,
+        includeNumbers
+      );
+
+      console.log(`Generated email: ${email}@bit.lt`);
+      email1.innerHTML =
+        "Generated email :  <span style='color: red;'>" +
+        email +
+        " </span> @bit.lt ";
     </script>
   </body>
 </html>
