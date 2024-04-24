@@ -119,7 +119,7 @@ doChores();
 function generateEmail(length, includeLowercase, includeUppercase, includeNumbers) {
 
   if ((length < 1) || (!includeLowercase && !includeUppercase && !includeNumbers)) {
-    return "Negaliu sugeneruoti e-mailo. Keliaukit namo(arba čiuožkit).";
+    return console.log("Negaliu sugeneruoti e-mailo. Keliaukit namo(arba čiuožkit).");
   }
 
   let char = '';
