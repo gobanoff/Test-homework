@@ -135,10 +135,15 @@ function generateEmail(length, includeLowercase, includeUppercase, includeNumber
 }
 
 // Options
-const emailNameLength = 10;
-const includeLowercase = true;
-const includeUppercase = true;
-const includeNumbers = true;
+//const emailNameLength = 10;
+//const includeLowercase = true;
+//const includeUppercase = true;
+//const includeNumbers = true;
+
+const emailNameLength = 0;
+const includeLowercase = false;
+const includeUppercase = false;
+const includeNumbers = false;
 
 const email = generateEmail(emailNameLength, includeLowercase, includeUppercase, includeNumbers);
 
