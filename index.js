@@ -115,14 +115,14 @@ catch(error){
 doChores();
 
 function generateEmail(length, includeLowercase, includeUppercase, includeNumbers) {
-  let characters = '';
-  if (includeLowercase) characters += 'abcdefghijklmnopqrstuvwxyz';
-  if (includeUppercase) characters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  if (includeNumbers) characters += '0123456789';
+  let char = '';
+  if (includeLowercase) char += 'abcdefghijklmnopqrstuvwxyz';
+  if (includeUppercase) char += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  if (includeNumbers) char += '0123456789';
 
   let email = '';
   for (let i = 0; i < length; i++) {
-      email += characters.charAt(Math.floor(Math.random() * characters.length));
+      email += char.charAt(Math.floor(Math.random() * char.length));
   }
   return email;
 }
